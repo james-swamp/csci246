@@ -1,10 +1,11 @@
 \documentclass{article}
-\usepackage{../fasy-hw}
+\usepackage{fasy-hw}
+\usepackage{amssymb}
 
 %% UPDATE these variables:
 \renewcommand{\hwnum}{2}
 \title{Discrete Structures, Homework 1}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author {Robert Marsh (JamesBean)}
 \collab{n/a}
 \date{due: 5 February 2021}
 
@@ -49,22 +50,29 @@ are using.
 
 \paragraph{Answer}
 
-\todo{explain what is wrong with her argument.  What common error did she make?}
-
-\todo{make your argument in English}.
-Therefore, I earned $\$45$ and you earned $\$10$.
+Dear sister, you have made the common mistake of the converse error fallacy. You cannot correctly conclude that we washed 9 cars solely based on me earning $\$45$, because it is not necessarily true. I could have earned my $\$45$ from tips or doing other work, not just from washing cars in our car wash. I earned extra money from doing side jobs, not from washing cars. Therefore, I earned $\$45$ and you earned $\$10$.
 
 Consider the following statements:
 \begin{enumerate}
-    \item p = ``\todo{statement here}''
-    \item q = ``\todo{statement here}''
-    \item r = ``\todo{statement here}''
-    \item \todo{add more lines if you need them}
+    \item p = ``you earned $\$45$''
+    \item q = ``we washed $9$ cars''
 \end{enumerate}
-\todo{now, make your argument using the variables for the statements.  Exmplain
-what rules/arguments you are using with each statement.}
 
+Using these statements, my argument follows the form of Modus Tollens:
 
+\begin{enumerate}
+    \item If we washed 9 cars, you earn $\$45$.
+    \item If you earned $\$10$, then we did not wash 9 cars.
+    \item Therefore, you did not earn $\$45$.
+\end{enumerate}
+
+or 
+
+\begin{enumerate}
+    \item $p\implies q$
+    \item $\sum q$
+    \item $\therefore$ $\sim p$
+\end{enumerate}
 % ============================================
 % ============================================
 \collab{\todo{}}
@@ -142,7 +150,18 @@ of hearts, 3 of clubs, and king of hearts.
 Exercise Set 4.9, Question 23.
 
 \paragraph{Answer}
-\todo{your answer here.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3.5in]{exercise4923}
+    \caption{Exercise Set 4.9, Question 23. Part A,B,C.}\label{fig:ex4923}
+\end{figure}
+
+\begin{itemize}
+    \item [d.] $K_{m,n}$ has $n$ vertices of degree $m$, and $m$ vertices of degree $n$. This is because each member of $n$ has $m$ vertices because it is connected to every $m$, and there are $n$ number of vertices with this property.
+    \item [e.] The total degree of $K_{m,n}$ is $2mn$.
+    \item [f.] The number of edges of $K_{m,n}$ is $mn$, because it is the total degree of $m$ (or $n$). Each $m$ is connected to each $n$ once and to nothing else (no $(m,m)$ edges), so the total degree of $m$ is equivalent to the number of edges.
+\end{itemize}
 
 
 % ============================================
@@ -151,6 +170,7 @@ Exercise Set 4.9, Question 23.
 \nextprob{Four Color Theorem}
 % ============================================
 % ============================================
+
 Read Chapter 1 of \emph{Four Colors Suffice} and answer the following questions:
 
 \begin{enumerate}
@@ -160,13 +180,13 @@ Read Chapter 1 of \emph{Four Colors Suffice} and answer the following questions:
         a point?
 
         \paragraph{Answer}
-        \todo{your answer here.}
+        This is allowed because it is a formally agreed upon rule for this problem. Were corner-touching regions required to be different colors, then people could create maps like pie charts, that require up to an infinite number of colors which ruins the whole problem.
 
     \item Again, looking at the map of the continental US on Page 5, explain why
         Michigan does not satisfy the conditions for the four color theorem.
 
         \paragraph{Answer}
-        \todo{your answer here.}
+        Because it is in two pieces - the four color theorem requires that "each country must be in one piece".
 
     \item Explain why we an omit the states of Hawaii and Alaska in order to
         construct a four-coloring of the states in the USA.
@@ -218,6 +238,8 @@ biography.
 \newpage
 \bibliographystyle{acm}
 \bibliography{biblio}
+
+
 
 \end{document}
 

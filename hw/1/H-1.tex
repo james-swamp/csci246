@@ -5,10 +5,9 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{1}
 \title{Discrete Structures, Homework 1}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
-\collab{n/a}
+\author{Robert Marsh(JamesBean\#0678)}
 \date{due: 22 January 2021}
-
+\collab{n/a}
 \begin{document}
 
 \maketitle
@@ -31,35 +30,38 @@ General homework expectations:
 
 % ============================================
 % ============================================
+\collab{\small{Patrick OConnor, Chandler Norby, Patrick Schnabel, Silas Andrews, Avery Jacobson}}
 \nextprob{Getting to Know Your Classmates}
-\collab{n/a}
 % ============================================
 % ============================================
 
 Find a different classmate for each of the following:
 \begin{enumerate}
     \item Was born in the same month as you (year can be different).
-        \paragraph{Answer} \todo{answer here}
+        \paragraph{Answer} 
+        I was born in September, as was Patrick OConnor.
 
     \item Has a shared hobby with you.
-        \paragraph{Answer} \todo{answer here}
+        \paragraph{Answer} 
+        Chandler Norby and I share video games as a hobby.
 
     \item Has the same middle initial as you.
-        \paragraph{Answer} \todo{answer here}
+        \paragraph{Answer} 
+        Patrick Schnabel and I share the middle initial "J".
 
     \item Lives in a different building than you.
-        \paragraph{Answer} \todo{answer here}
+        \paragraph{Answer} Silas Andrews lives off campus East of the Hospital, I live off campus next to Lowe's.
 
     \item Has eaten at at least one restaurant or traveled to at least one city that you have not been
         (yet).
-        \paragraph{Answer} \todo{answer here}
+        \paragraph{Answer} Avery Jacobson has eaten somewhere I haven't: Hooters, in Long Beach, California.
 
 \end{enumerate}
 
 % ============================================
 % ============================================
+\collab{n/a}
 \nextprob{Why Proofs?}
-\collab{\todo{}}
 % ============================================
 % ============================================
 
@@ -69,43 +71,44 @@ mathematically.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+In both academic and professional context, computer scientists construct, implement, and test code with a specific function in mind. For most projects it is far too time consuming to experimentally demonstrate that the code will work for all relevant inputs. Knowing how to prove things mathematically allows computer scientists to implement code that they know will work for a specific set of data, by proving it through mathematic theory instead. This applies to both the base workability of the code solution, and the efficiency compared to other solutions. There are significant confounding variables when testing the run time of two different algorithms; proving it mathematically can be a more reliable method.
 
 
 % ============================================
 % ============================================
+\collab{Professor Fasy (Lecture + Discord guidance on how to do this proof)}
 \nextprob{A Proof}
-\collab{\todo{}}
 % ============================================
 % ============================================
 
 Prove that $6\Z \subset 2\Z$.
 
-\paragraph{Answer}
+\paragraph{Answer} First, we must define $6\Z$ and $2\Z$:
 
-\todo{your answer here}
+$2\Z := \{ n \in \Z $ $|$ $ \exists $ $y \in \Z $ $s.t.$ $n=2y \}$
+
+$6\Z := \{ n \in \Z $ $|$ $ \exists $ $y \in \Z $ $s.t.$ $n=6y \}$
+
+Let $n \in 6\Z$.  By definition of $6\Z$, we know that n is a multiple of 6, or $n = 6*m$ where $m$ is an integer. This can be rearranged to $n = 2(3*m)$. Therefore, $n=2*k$, where $k=3*$ which means that $n\in 2\Z$, as was to be shown.
 
 
 % ============================================
 % ============================================
+\collab{https://www.britannica.com/biography/Grace-Hopper}
 \nextprob{Grace Hopper}
-\collab{\todo{}}
 % ============================================
 % ============================================
 
-Write a short (1-2 paragraph) biography of Grace Hopper.
-\textbf{In your own words}, describe who they are and why they are important in
-the history of computer science.  If you use external resources, please provide
-proper citations.
+
 
 \paragraph{Answer}
 
-\todo{your answer goes between these lines}
+Grace Hopper was a computer scientist during the mid 20th century. After her schooling at Vassar and Yale, she worked on the United States' first government computer projects, the "Mark I", which by today's standards would be considered a calculator. She wrote the manual for this first "computer", she wrote the first compiler, she helped design the UNIVAC I (one of the first commercial business computers, also a calculator by today's standards). On top of all of this general work to the development of computing projects, her greatest contribution was the development of \emph{compilers}. This allowed programmers to write instructions in the English language, and later translate them into machine code. This abstraction greatly increases the complexity of problems that can be solved with computer programs, as the time and thinking power can be spent on broader concepts without getting bogged down in the details of implementing them step by step, for every individual calculation on a specific piece of hardware.
 
 % ============================================
 % ============================================
-\nextprob{Bonus Question!}
 \collab{\todo{}}
+\nextprob{Bonus Question!}
 % ============================================
 % ============================================
 
