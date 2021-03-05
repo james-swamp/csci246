@@ -39,6 +39,9 @@ Monday, 26 April 2021 since the actual event that you attend is not fixed).
 4. Learn about a faculty member at MSU.  Choose a faculty member at MSU (can be
    from any department), and write a two-page summary about their research area.
    Be sure to cite at least one of their papers or books.
+5. Complete three inductive proofs from the following list, including at least
+   one of the starred problems:
+   [PDF](https://www.math.waikato.ac.nz/~hawthorn/MATH102/InductionProblems.pdf)
 
 ## With Specific Dates
 
@@ -49,3 +52,16 @@ A. [Audun Myers, Separating Noise from Data using Sublevel Set Persistence with 
 B. [Peng Zhang, Efficient Algorithms for Fundamental Problems in Data
 Science](https://montana.webex.com/montana/j.php?MTID=m16141ab25b6a846dc83b104c6ff50c2b).
 Tuesday, 26 January at 15:00.  Passsword is`jZJK2sAPn87.
+
+C. 246 Writing workshop on 3/4. When you join, please bring a short writing
+sample (something that can be read in 5-10 minutes).  This can be either a proof
+in H-4, something that you handed into a previous HW, or something else
+entirely. (Of course, if you bring your HW, you should note the collaborators in
+the header of the HW itself, including those who gave you feedback on the
+write-up). I'll start with some general tips, then we will use breakout rooms to
+break into small groups, spend some time reading our partner's writing
+sample, then some time giving feedback to each other.  In the end, we come back
+as a group and discuss any themes that emerged.  To earn miscellaneous credit,
+you should make the suggested edits to your writing sample and submit the
+original version, submitted version, and a one-half to one-page write-up
+explaining what you learned about technical writing from this experience.
