@@ -1,10 +1,11 @@
 \documentclass{article}
 \usepackage{../fasy-hw}
 
+
 %% UPDATE these variables:
 \renewcommand{\hwnum}{4}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Robert Marsh (JamesBean)}
 \collab{n/a}
 \date{due: 5 March 2021}
 
@@ -28,7 +29,7 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Good Proofs}
+\collab{} \nextprob{Good Proofs}
 % ============================================
 % ============================================
 
@@ -39,13 +40,19 @@ examples.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+\begin{enumerate}
+        \item Good proofs are self-contained. They declare the meaning of key variables at the start of the proof, and as supplementary variables are added. Theorem 4.3.3 mentions \emph{"Suppose a, b, and c are [particular but arbitrarily chosen] integers such that a divides b and b divides c."}\footnote{ Epp, Susanna S. Discrete Mathematics. Brooks/Cole, 2011, p. 137} This allows the reader to follow proof on its own, without having to research supplementary context.
+        \item Good proofs are written in complete sentences with proper grammar, as seen in Theorem 4.3.3: \emph{"It follow by definition of divisibility that $r_0 | n$"}\footnote{ Epp, Susanna S. Discrete Mathematics. Brooks/Cole, 2011, p. 138} This makes them equally readable by text, or spoken aloud, and avoid ambiguity.
+        \item Good proofs use helper phrases - in addition to the complete grammar and language, helper phrases are used to improve readability and flow - see Theorem 4.6.4, \emph{"Then $N < 1$, and so, by Theorem 4.3.4, $N$ is divisible by some prime number $q$."}\footnote{ Epp, Susanna S. Discrete Mathematics. Brooks/Cole, 2011, p. 167} Words like \emph{"then, thus, since, hence, so, therefore, it follows that, by definition of"} explain how each new step is related to the last.
+        \item Good proofs give reasons for each assertion. They declare the origin of starting assertions, and new ones as they are added. This can bee seen in Theorem 4.3.3\footnote{ Epp, Susanna S. Discrete Mathematics. Brooks/Cole, 2011, p. 150} where several steps are denoted \emph{"by substitution, by definition of square, by the laws of algebra"}.
+        \item Good proofs separate out equations from the written text where appropriate, as seen in Theorem 4.6.1\footnote{ Epp, Susanna S. Discrete Mathematics. Brooks/Cole, 2011, p. 165}. When performing algebra, the equations are laid out on separate lines (as opposed to being written in-line). The vertical layering helps visually separate the steps taken, and allows for clear labeling of such.
+\end{enumerate}
 
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Max of a Subset}
+\collab{} \nextprob{Max of a Subset}
 % ============================================
 % ============================================
 
@@ -54,12 +61,19 @@ statement: For all subsets $A \subseteq B$, the following inequality
 holds: $\max(A) \leq \max(B)$.
 
 \paragraph{Answer}
+\paragraph{Proof.}
 
-\todo{your answer here}
+Let $\max(A) = x$. By definition of $max()$: $$\forall y \in B, y \leq x$$ Next, let $\max(B) = z$. By definition of $max()$: $$\forall w \in B, w \leq z$$
+Because $x \in A$ and $A \subseteq B$, $x \in B$. Thus:
+\begin{align}
+        \nonumber w &\leq z &&\text{by definition of $max()$}\\ \nonumber x &\leq z &&\text{because $x \in B$}\\ \nonumber \max(A) &\leq z &&\text{by substitution} \\ \nonumber \max(A) &\leq \max(B) &&\text{by substitution}
+\end{align}
+[\emph{This is what was to be shown.}]
+
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Fibonacci}
+\collab{} \nextprob{Fibonacci}
 % ============================================
 % ============================================
 
@@ -74,12 +88,48 @@ $$
 Prove $\sum_{i=1}^n F_i = F_{n+2}-1$.
 
 \paragraph{Answer}
+\paragraph{Proof (by mathematical induction):}
 
-\todo{your answer here}
+Let the property $P(n)$ be the equation $\sum_{i=1}^n F_i = F_{n+2}-1$
+
+We must show that P(n) is true for all integers $n \geq 1$. To establish P(1), we must show that $$\sum_{i=1}^1 F_1 = F_{1+2}-1$$ But
+\begin{align}
+        \nonumber \sum_{i=1}^1 F_1 & = F_1 &&\text{by definition of $\sum$} \\ \nonumber & = 1
+\end{align}
+and
+\begin{align}
+        \nonumber F_{1+2}-1 & = F_3 - 1 \\ \nonumber &= F_2 + F_1 - 1 &&\text{by definition of $F_i$}\\ \nonumber & = 1 + 1 - 1 &&\text{by definition of $F_i$} \\ \nonumber &= 1
+\end{align}
+
+Hence P(1) is true.
+
+\textbf{Show that for all integers $k \geq 1$, if P(k) is true then P(k+1) is also true.} \newline
+Suppose that P(k) is true for a particular but arbitrarily chosen integer $k \geq 1$. That is, suppose $k$ is any integer with $k \geq 1$ such that: 
+\begin{align}
+        \nonumber \sum_{i=1}^k F_i = F_{k+2}-1 &&\text{$\leftarrow$ P(k), the inductive hypothesis}
+\end{align}
+We must show that $P(k+1)$ is true. That is:
+\begin{align}
+        \nonumber \sum_{i=1}^{k+1} F_i = F_{(k+1)+2}-1
+\end{align}
+We will show that the left side of the equation is equal to the right side. The left side of the equation is:
+\begin{align}
+        \nonumber \sum_{i=1}^{k+1} F_i & = \sum_{i=1}^{k} F_i + F_{k+1} &&\text{by definition of $\sum$} \\
+        \nonumber &= F_{k+2} - 1 + F_{k+1} &&\text{by inductive hypothesis} \\
+        \nonumber &= (F_{k+1} + F_{k+2}) - 1 &&\text{by algebra} \\
+        \nonumber &= F_{k+3} - 1 &&\text{by definition of $F_i$}
+\end{align}
+The right side of the equation is:
+\begin{align}
+        \nonumber F_{(k+1)+2}-1 & = F_{k+3} - 1 &&\text{by algebra}
+\end{align}
+This equals the left side of the equation. \newline
+[\emph{This is what we needed to show.}] \newline
+[\emph{Since we have proved the basis step and the inductive step, we conclude that the propositions is true.}]
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{US Coins}
+\collab{} \nextprob{US Coins}
 % ============================================
 % ============================================
 
@@ -89,11 +139,27 @@ pennies.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+We must prove that for all integers $n \geq 1$, $P(n)$ is true where $P(n)$ is the sentence "$n$ cent(s) can be made with at most four pennies". \newline
+\textbf{Step 1: Show that P(1) is true.}\newline
+P(1) is the statement: "1 cent can be made with at most four pennies". P(1) is true because 1 cent can be made with 1 penny. \newline
+\textbf{Step 2: Show that for all integers $k \geq 1$, if $P(k)$ is true then $P(k+1)$ is true.} \newline
+[\emph{Suppose that $P(k)$ is true for a particular but arbitrarily chosen integer $k \geq 1$. That is:}] \newline
+Suppose that $k$ is any integer with $k \geq 1$ such that
+\begin{align}
+        \nonumber \text{$k$ cents can be made with at most four pennies.} &&\text{$\leftarrow$ P(k), the inductive hypothesis}
+\end{align}
+We must show that $P(k+1)$ is true. That is:
+\begin{align}
+        \nonumber \text{$(k+1)$ cents can be made with at most four pennies.} &&\text{$\leftarrow$ P(k+1)}
+\end{align}
+\textbf{Case 1 (\emph{There are less than four pennies being used to make $k$ cents.}):} In this case, add one penny. The result will be $(k+1)$ cents. \newline
+\textbf{Case 2 (\emph{There are four pennies being used to make $k$ cents.}):} In this case, remove four pennies and replace them with a 5-cent coin (nickel). The result will be $(k-4+5)$ cents, which is equal to $(k+1)$ cents. \newline \newline
+Thus in either case, $(k+1)$ cents can be obtained using less than four pennies [\emph{as was to be shown}]. \newline
+[\emph{Since we have proven the basis step and the inductive step, we conclude that the proposition is true.}]
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -106,12 +172,19 @@ EC:
 Use a ``minimal criminal'' argument to prove this.
 
         \paragraph{Answer}
+\textbf{Proof.}
+Theorem: if an edge is removed from a tree, then the resulting graph has two connected components.
 
-        \todo{your answer here}
+As per Chapter 10.3, a \textbf{tree} is a graph that is circuit-free and connected (i.e. one connected component).
+[\emph{Suppose not. Suppose that if an edge is removed from a tree, then the resulting graph does not have two connected components. That is:}]
+
+Let $T$ be a tree that has had one edge removed, with a resulting number of connected components $C$. Hence: $C \leq 1 \lor C > 2$.
+
+If $C = 1$, adding one edge to graph (to return to original form) with one connected component would create a cycle, which violates the definition of a tree. If $C > 2$, adding one edge can reduce the number of connected components down to at most $C = 2$, which also violates the definition of a tree. This creates a contradiction. [\emph{This shows that the supposition is false, thus, the theorem is true.}]
 
 % ============================================
 % ============================================
-\collab{\todo{}}
+\collab{}
 \nextprob{Leonhard Euler}
 % ============================================
 % ============================================
@@ -127,12 +200,19 @@ biography.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Leonhard Euler was an 18th century Swiss everyman working in a plethora of STEM fields - mathematics, physics, astronomy, geometry, logic, and engineering. Studying at the University of Basel, he focused mainly on philosophy, at the same time studying mathematics from his weekend tutor. Shortly after his Master of Philosophy in 1723, he branched out and wrote a dissertation on the propagation of sound waves (1726). On his next branch, he won an architecture competition for designing the best way to install masts on a ship. Later he moved became a professor at the Imperial Russian Academy of Science, first as a medical professor, then in mathematics, on top of working as a medic in the Russian Navy. In late 1741 he he moved to work at the Berlin Academy, publishing hundreds of papers over the next 2.5 decades. Due to conflict with the Prussian king, had to leave Berlin and move back to (an admittedly well-paying) job back at the Imperial Russian Academy. He lost his house in a fire in 1771, and his wife in 1773. In 1783, he fell victim to a brain hemorrhage and died shortly after.
+
+Euler made several contributions to mathematics that are useful for and relevant to computer science. He demonstrated several applications of calculus and theory to real-work physical problems in physics and architecture. He developed a solution to the \emph{Seven Bridges of Konigsberg} graph theory problem, the Eulerian circuit theorem, and the formula $V - E + F = 2$ which relates the number of vertices $V$, with the number of edges $E$ and faces $F$ of convex polyhedrons (which lends itself to solving 3d and 2d graph problems). He developed diagrams to analyze and represent relation between sets. As Computer Science emphasizes a focus on graph theory and set theory to analyze complex problems, Euler's work has generated a greater set of tools with which to do so. In the same way object-oriented programming abstracts away lower-order operations, studies of graph theory and sets can abstract away the lower-order proofs, counting it them as true due to Euler's theorems, and move to a higher order of analysis for harder problems.
+
+My sources are:
+\begin{enumerate}
+        \item Wikipedia Article: \url{https://en.wikipedia.org/wiki/Leonhard_Euler}
+\end{enumerate}
 
 % %% ... the bibliography
-% \newpage
-% \bibliographystyle{acm}
-% \bibliography{biblio}
+%\newpage
+%\bibliographystyle{acm}
+%\bibliography{biblio}
 
 \end{document}
 
