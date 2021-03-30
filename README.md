@@ -354,6 +354,16 @@ hear or smell you.
     [F](https://miro.com/app/board/o9J_lOG_9Yw=/),
     [Fb](https://miro.com/app/board/o9J_lOG_9bY=/)
 
+### Week 11 (22 March 2021)
+- Topics: Relations
+- Reading: Chapter 8
+- Miro Links: [M](https://miro.com/app/board/o9J_lOYSHWw=/),
+    [Mb](https://miro.com/app/board/o9J_lOYSHXw=/),
+    [W](https://miro.com/app/board/o9J_lN5CHpQ=/),
+    [Wb](https://miro.com/app/board/o9J_lN5CHq8=/),
+    [F](https://miro.com/app/board/o9J_lNbk66A=/),
+    [Fb](https://miro.com/app/board/o9J_lNbk67M=/)
+
 --- 
 )
 This syllabus was created, using wording from previous courses that I have
