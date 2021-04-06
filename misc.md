@@ -50,6 +50,12 @@ Monday, 26 April 2021 since the actual event that you attend is not fixed).
    a one-page reflection on whatever it is you did. What
    impact that that have on your ability to focus?  Do you have any additional
    short-term goals that you can set for your future self?
+8. Visit the art exhit
+   [The Botany of Math](http://www.theemerson.org/events/exhibit-mathre/)
+   at the Emerson.  Write a 1-2 page reflection on your experience.
+9. Find a reference (direct or indirect) of something relating to this class in
+   the news.  Was the concept used or applied correctly?  Using this article,
+   explain the concept to your imaginary 8-year-old sibling.
 
 ## With Specific Dates
 
@@ -87,3 +93,6 @@ distinguished lecture on 9 March 2021.  The recording is available
 
 F. Boolean Algebra.  Let $S$ be a set.  Let $2^S$ denote the power set of $S$.  Consider the two operations of union and intersection of sets in $2^S$.  Prove that this forms a boolean algebra.  Due: 29 March 2021.
 intersection.
+
+G. Anna's Practice Talk.  Attend the PhD proposal practice talk of Anna
+Schenfisch on Tuesday, 6 April 15:00-16:30 (see link in discord).
