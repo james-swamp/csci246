@@ -4,7 +4,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{6}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Robert Marsh (JamesBean)}
 \collab{n/a}
 \date{due: 2 April 2021}
 
@@ -29,7 +29,7 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Applications}
+\collab{} \nextprob{Applications}
 % ============================================
 % ============================================
 
@@ -45,31 +45,33 @@ data science:
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Trees are used in computer science to form many useful data structures, namely Heaps and Search Trees. Heaps allow for the creation of $O(\log n)$ priority queues. Search Trees (Binary, Ternary, 2-3, Red-Black, and Tries) provide useful $O(\log n)$ search capabilities for symbol tables/dictionaries with low space requirements, often $O(n)$.
 
     \item Directed Graph
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Directed Graphs can be used to represent geographic maps for physical and electronic traversal of real-world connections (such as roads, trains, planes, automobiles, electric networks, internet networks, trade networks, currency exchange, PageRank for search engines). Directed Graphs provide for efficient analysis of these networks: identifying strongly connected components, cycle detection, minimum spanning trees, or shortest paths all provide useful information when choosing how and where to budget infrastructure improvements.
 
     \item Equivalence Classes
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+    
+        Hash Tables and Graph Traversal Algorithms both make intrinsic use of Equivalence Classes. For hash tables, distinct equivalence classes would be each index that can be mapped to from the set of all possible keys using the hash function (if each key is reduced to an integer). This is also relevant for hash tables that implement separate chaining, as the distinct equivalence classes from that set describe the possible "chain" locations. Equivalence Classes can also represent reachable nodes in a graph, where the relation R is described as the reachability between the two nodes.
 
     \item Distance Metrics
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+    
+        Distance Metrics can be used for a lot of modern problems surrounding big data, or anywhere it would be time consuming to make brute force comparisons. Things such as targeted ads, spell checker, plagiarism detection, and search engine results all can make use of Distance Metrics for efficient solutions to find "similar" results to a given input.
 
     \item Injective Function
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Injective Functions are best applied as hash functions for cryptography and hash tables. Cryptography has been a large force behind the advancement of computer science in the last few centuries, with the rise of global communication networks in the 1900's, from the radio to the internet. Many computer machines were developed during wartime, for creating and cracking codes for critical communication. One-to-one hash functions provide for reliable code translation. In recent decades, as we move into an era with massive amounts of data, reliable hash functions help with the creation of $O(n)$ symbol tables for large sets of data.
 
 
 \end{enumerate}
@@ -77,7 +79,7 @@ data science:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Distance Functions}
+\collab{} \nextprob{Distance Functions}
 % ============================================
 % ============================================
 
@@ -95,25 +97,74 @@ return one of the cocktails that minimizes this distance.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+    The distance function is $d: X \times X \rightarrow \mathbb{Z}$.
+    Let X be the set of all cocktail ingredient lists. Let x and y be elements of X.
+    Let $z_{x,y}$ be the set of ingredients that are in x or y but not both (i.e. the "difference"):  $x-y \cup y-x$
+    Let $d(x,y)$ be the number of elements in $z_{x,y}$.
+
+\textbf{Proof.}
+\newline
+\textbf{0. Non-negativity:} [\textbf{Prove that $\forall x,y \in X$, $d(x,y) \geq 0$.}] \newline d(x,y) is defined as the number of difference between x and y. The least number of differences is zero, so d(x,y) cannot be negative. \newline
+\textbf{1. Identity of Indiscernables:} \newline
+\emph{Identity:} [\textbf{Prove that $d(x,y) = 0 \Rightarrow x = y$.}] \newline If $d(x,y) = 0$ then there are no differences between the sets x and y. That is, every element of x is in y and every element of y is in x. Therefore, x = y by the definition of Set Equality.
+\newline \emph{Separability:} [\textbf{Prove that $x=y\Rightarrow  d(x,y) = 0$.}] \newline By definition of $d(x,y)$:
+
+\begin{align}
+    z &= x-y \cup y-x \\
+    &= x-x \cup x-x && \text{\emph{by substition}} \\
+    &= (x \cap x^c) \cap (x \cap x^c) && \text{\emph{by the Set Difference Law}} \\
+    &= (\emptyset) \cap (\emptyset) &&  \text{\emph{by the Set Complement Law}} \\
+    &= \emptyset && \text{\emph{by the Idempotent Law of Sets}} 
+\end{align}
+The number of elements in $\emptyset$ is 0. Therefore, $d(x,y) = 0$. [This is what was to be shown.]
+
+\textbf{2. Symmetry:}
+[\textbf{Prove that $\forall x,y \in X$, $d(x,y) = d(y,x)$}] \newline
+By definition of $d(x,y)$, $d(x,y)$ = the number of elements $z_{x,y}$ and $d(y,x)$ = the number of elements $z_{y,x}$. Let $z_{x,y} = z_{y,x}$:
+\begin{align}
+    z_{x,y} &= z_{y,x} \\
+    x-y \cup y-x &= y-x \cup x-y &&\text{\emph{by definition of z}} \\
+    x-y \cup y-x &= x-y \cup y-x &&\text{\emph{by the Commutative Law of Sets}}
+\end{align}
+Therefore, $z_{x,y} = z_{y,x}$. By the definition of Set Equality, $z_{x,y}$ and $z_{y,x}$ have the same number of elements. Therefore, $d(x,y) = d(y,x)$. [\emph{This is what was to be shown.}]
+
+\textbf{3. Subadditivity:}
+[\textbf{Prove that $\forall x,y,w \in X$, $d(x,y) \leq d(x,w) + d(w,y)$.}]
+By definition of non-negativity proven in Step 0, $0 \leq d(w,y)$. When $d(w,y) = 0$, $w=y$ by the Identity law proven in Step 1. Let:
+\begin{align}
+    d(x,y) &\leq d(x,w) + d(w,y) \\
+    d(x,y) &\leq d(x,w) + 0 \\
+    d(x,y) &\leq d(x,y) &&\text{\emph{by Identity of Indiscernables}}
+\end{align}
+Therefore, $d(x,y) \leq d(x,w) + d(w,y)$ when $d(w,y) = 0$.
+\begin{itemize}
+\item For each change in $x$, $d(x,y)$ and $d(x,w)$ both increase by 1, $d(x,y) + 1  \leq d(x,w) + 1 + d(w,y)$
+\item For each change in $y$, $d(x,y)$ and $d(w,y)$ both increase by 1, $d(x,y) + 1 \leq d(x,w) + d(w,y) + 1$
+\item For each change in $w$, $d(x,w)$ and $d(w,y)$ both increase by 1, $d(x,y) \leq d(x,w) + 1 + d(w,y) + 1$
+\end{itemize}
+Through subtraction, these all reduce to $d(x,y) \leq d(x,w) + d(w,y)$. [This is what was to be shown.]
+
+Because we have proven all 4 items, this distance is a metric.
+
 
     \item Is this a good distance to use for your application?  Why or why not?
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        This is a good distance to use from a bartending or shopping perspective because it minimized the number of ingredient changes needed to decide upon a new cocktail. If one was preparing to make a certain cocktail and had the ingredients, and wanted to find something similar this would be great. However, the drawback of this system is that it ignore certain aspects of flavor (bitter, sweet, sour, savory, etc.) that people like about a specific input cocktail. A sweet drink, like a Moscow Mule (vodka, ginger beer, lime) is just one ingredient away from a Kentucky Mule (whiskey, ginger beer, lime), but it's also one ingredient away from a very bitter shot of vodka with lime. So this distance misses out on that additional "flavor" factor, which could result in some poor recommendations.
 
 \end{enumerate}
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Loop Invariant}
+\collab{} \nextprob{Loop Invariant}
 % ============================================
 % ============================================
 
 Recall that a loop invariant is used to prove that a loop is correct (which in
 turn helps to prove that an algorithm is correct).
+    
 
 \begin{enumerate}
 
@@ -125,25 +176,35 @@ turn helps to prove that an algorithm is correct).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+
+        $i = 0$ \newline
+        \textsc{curguess} = 0 \newline
+        \textsc{curmax} = infinity \newline
+        \textbf{while} $i \less$ the length of A\textbf{do} \newline
+        \textbf{if} \textsc{curmax} $\leq$ A[i] \textbf{then} \{\newline 
+        \textsc{curguess} $=$ \textsc{curmax} \newline
+        \textsc{curmax} $=$ A[i] \} \newline 
+        \textbf{if} \textsc{curguess} $\leq$ A[i] \textbf{then} \{ \newline 
+        \textsc{curguess} $=$ A[i] \} \newline
+        \textbf{end while}
 
     \item What is the postcondition of the loop? (Call this statement $Q$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        \textsc{curguess} = the 2nd largest element in A and \textsc{curmax} = the largest element in A
 
     \item What is the precondition of the loop? (Call this statement $P$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        \textsc{curguess} = 0 and \textsc{curmax} = infinity
 
     \item What is the loop guard of the loop? (Call this statement $G$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        $i \less$ the length of A
 
     \item Prove that the loop invariant is when entering the $i^\text{th}$
         iteration of the loop is, ``the variable \textsc{curguess} stores

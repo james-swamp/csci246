@@ -87,9 +87,14 @@ Prove that $6\Z \subset 2\Z$.
 
 $2\Z := \{ n \in \Z $ $|$ $ \exists $ $y \in \Z $ $s.t.$ $n=2y \}$
 
-$6\Z := \{ n \in \Z $ $|$ $ \exists $ $y \in \Z $ $s.t.$ $n=6y \}$
+$6\Z := \{ n \in \Z $ $|$ $ \exists $ $x \in \Z $ $s.t.$ $n=6x \}$
 
-Let $n \in 6\Z$.  By definition of $6\Z$, we know that n is a multiple of 6, or $n = 6*m$ where $m$ is an integer. This can be rearranged to $n = 2(3*m)$. Therefore, $n=2*k$, where $k=3*$ which means that $n\in 2\Z$, as was to be shown.
+Let $n \in 6\Z$.  By definition of $6\Z$ :
+\begin{align}
+    \nonumber n & = 6m \text{ where } m \text{ is an integer} \\
+    \nonumber n & = 2(3m) && \text{\emph{through algebra }}
+\end{align}
+Let $x = 3m$. Through substitution, $n=2x$. By definition of $2\Z$, $n\in 2\Z$, as was to be shown.
 
 
 % ============================================
