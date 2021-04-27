@@ -4,7 +4,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{7}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Robert Marsh (JamesBean)}
 \collab{n/a}
 \date{due: 16 April 2021}
 
@@ -26,10 +26,24 @@ General homework expectations:
         remove the \texttt{todo}, but not the word \texttt{Answer}).
 \end{itemize}
 
+\begin{algorithm}
+    \begin{algorithmic}
+      \State $x \gets 1$
+      \For{\State{$i \in \{1,2, \ldots, 10\}$}}
+        \State $x \gets x+i$
+      \If{$x$ is even}
+        \State print "x is even"
+      \Else
+        \State print "x is odd"
+      \EndIf
+      \EndFor
+    \end{algorithmic}
+\end{algorithm}  
+
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Graphs}
+\collab{} \nextprob{Graphs}
 % ============================================
 % ============================================
 
@@ -43,12 +57,15 @@ graphs represent different things.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+\begin{enumerate}
+    \item One graph you could make is a bipartite graph using the movie titles for one set, and customer names for the other set. An edge from a movie title to a customer name would represent the customer's purchase of that title. This graph could allow a movie store owner to provide recommendations to customers by taking a movie title as input, and looking at the set of movies adjacent to customers that purchased the input title. One could also analyze popular movies and popular customers by looking at the degree of each vertex.
+    \item A second (and also bipartite) graph you could make is a graph of movies \& prices. An edge from a movie to a price would represent a purchase of the movie at that specified price. This graph could help to provide recommendations for movies given an input price or movie title - either with the set of movies adjacent to the input price, or the set of movies adjacent to the prices that are adjacent to the input movie title. One could also analyze popular prices by looking at the degree of each price vertex.
+\end{enumerate}
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Equivalence Class}
+\collab{} \nextprob{Equivalence Class}
 % ============================================
 % ============================================
 
@@ -62,19 +79,50 @@ connected components.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        \textbf{Proof:}
 
+        Let A be the set of all simple graphs. Let $c_{n}$ be equal to the number of connected components in a graph $n \in A$. Let R be the relation: "two graphs $g,h \in A$ are related (denoted $gRh$) if and only if $c_{g} = c_{h}$" By definition of equivalence relation, $R$ is an equivalence relation if, and only if, $R$ is reflexive, symmetric, and transitive.
+
+        \emph{\textbf{Proof that R is reflexive:}} By definition of reflexive, $R$ is reflexive if, and only if, the following statement is true:
+        \begin{align} &\nonumber \text{For all $x \in A, x R x$.}
+        \end{align}
+        By definition of R, $xRx$ means that $c_{x} = c_{x}$. This is most certainly true because every real number is equal to itself. Hence, $R$ is reflexive.
+
+        \emph{\textbf{Proof that R is symmetric:}} By definition of symmetric, $R$ is symmetric if, and only if, the following statement is true:
+        \begin{align} &\nonumber \text{For all $x,y \in A$, if $xRy$ then $yRx$.}
+        \end{align}
+        By definition of R, $xRy$ means that $c_{x} = c_{y}$ and $yRx$ means that $c_{y} = c_{x}$. Hence $R$ is symmetric if, and only if, the following statement is true:
+        \begin{align} &\nonumber \text{For all $x,y \in A$, \textbf{if} $c_{x} = c_{y}$ then $c_{y} = c_{x}$.}
+        \end{align}
+        Through through substitution:
+        \begin{align} &\nonumber \text{For all $x,y \in A$, \textbf{if} $c_{x} = c_{x}$ then $c_{x} = c_{x}$.}
+        \end{align}
+        This is most certainly true because every real number is equal to itself. Hence, $R$ is symmetric.
+
+        \emph{\textbf{Proof that R is transitive:}} By definition of transitive, $R$ is transitive if, and only if, the following statement is true:
+        \begin{align} &\nonumber \text{For all $x,y,z \in A$, \textbf{if} $xRy$ and $yRz$ then $xRz$.}
+        \end{align}
+        By definition of R: $xRy$ means that $c_{x} = c_{y}$, $yRz$ means that $c_{y} = c_{z}$, and $xRz$ means that $c_{x} = c_{z}$. Hence $R$ is transitive if, and only if, the following statement is true:
+        \begin{align} &\nonumber \text{For all $x,y,z \in A$, \textbf{if} $c_{x} = c_{y}$ and $c_{y} = c_{z}$ then $c_{x} = c_{z}$.}
+        \end{align}
+        Through substitution:
+        \begin{align} &\nonumber \text{For all $x,y,z \in A$, \textbf{if} $c_{x} = c_{y}$ and $c_{y} = c_{z}$ then $c_{y} = c_{y}$.}
+        \end{align}
+        This is most certainly true because every real number is equal to itself. Hence, $R$ is transitive.
+
+        We have proven that $R$ is reflexive, symmetric, and transitive. Hence, by definition of equivalence relation, $R$ is an equivalence relation. [\emph{This is what was to be shown.}]
+\pagebreak
     \item Describe a scenario where you might use this equivalence relation.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        You might use this equivalence relation to compare potential plans or "blueprints" for infrastructure regions in a new city (power, natural gas, waste disposal, public transportation). The nodes of the graphs would be home addresses, junctions, and regional centers(e.g. a bus depot or waste plant), with edges representing a connection between the two. Any sets of blueprints with the relation $R$ could be considered equivalent when dividing up the geographical area to match the regional centers.
 
 \end{enumerate}
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Pseudocode}
+\collab{} \nextprob{Pseudocode}
 % ============================================
 % ============================================
 
@@ -87,24 +135,67 @@ Recall the binary search algorithm.
         \paragraph{Answer} My algorithm for binary search using a for loop is given in \algref{forloop}.
 
         \begin{algorithm}
-            \caption{\textsc{BinarySearchFor}$(A)$}\label{alg:forloop}
+            \caption{\textsc{BinarySearchFor}$(A, b)$}\label{alg:forloop}
             \begin{algorithmic}
-                \State \todo{pseudocode here}
+                \State [Pre-condition: $b$ is a sorted array of comparable elements, $A$ is a target element of the same type.]
+                \State $answer := -1, middle:=0, low:=0, high:=n-1$
+                \For {$low := 0$ to $high$}
+                    \State $middle := \lfloor \frac{high + low}{2} \rfloor$
+                    \If {$b[middle] = A$}
+                    \State $answer := middle$
+                    \ElsIf {$b[middle] < A$}
+                        \State $ low := mid + 1$
+                    \Else \State $ high := mid -1$
+                    \EndIf
+                \EndFor
+                \State [Post-condition: if $answer$ has value $-1$ then $if b[middle] = A$ was never true, so $A$ is not in the array. Otherwise, $answer$ gives the array index where $A$ is found.]
             \end{algorithmic}
         \end{algorithm}
 
     \item Using the algorithm/algorithmic environment, give pseudocode using a while loop.
 
-        \paragraph{Answer}
+    \paragraph{Answer} My algorithm for binary search using a for loop is given in \algref{whileloop}.
 
-        \todo{your answer here}
-
+        \begin{algorithm}
+            \caption{\textsc{BinarySearchWhile}$(A, b)$}\label{alg:whileloop}
+            \begin{algorithmic}
+                \State [Pre-condition: $b$ is a sorted array of comparable elements, $A$ is a target element of the same type.]
+                \State $answer := -1, middle:=0, low:=0, high:=n-1$
+                \While {$low\leq high$}
+                    \State $middle := \lfloor \frac{high + low}{2} \rfloor$
+                    \If {$b[middle] = A$}
+                    \State $answer := middle$
+                    \ElsIf {$b[middle] < A$}
+                        \State $ low := mid + 1$
+                    \Else \State $ high := mid -1$
+                    \EndIf
+                \EndWhile
+                \State [Post-condition: if $answer$ has value $-1$ then $if b[middle] = A$ was never true, so $A$ is not in the array. Otherwise, $answer$ gives the array index where $A$ is found.]
+            \end{algorithmic}
+        \end{algorithm}
+\pagebreak
     \item Using the algorithm/algorithmic environment, give pseudocode using
         recursion.
 
-        \paragraph{Answer}
-
-        \todo{your answer here}
+    \paragraph{Answer} My algorithm for binary search using a for loop is given in \algref{recursive}.
+        \begin{algorithm}
+            \caption{\textsc{BinarySearchRecursive}$(A, b, low, high)$}\label{alg:recursive}
+            \begin{algorithmic}
+                \State [Pre-condition: $b$ is a sorted array of comparable elements, $A$ is a target element of the same type, $low$ and $high$ are integers within the range of $b$.]
+                \If {$low > high$}
+                \State $answer := -1$
+                \State \textbf{break}
+                \EndIf
+                \State $middle := \lfloor \frac{high + low}{2} \rfloor$
+                \If {$b[middle] = A$}
+                    \State $answer := middle$
+                \ElsIf {$b[middle] < A$}
+                      \State call \textsc{BinarySearchRecursive}$(A, b, middle + 1, high)$
+                \Else \State call \textsc{BinarySearchRecursive}$(A, b, low, middle - 1)$
+                \EndIf
+                \State [If $answer$ has value $-1$ then $if b[middle] = A$ was never true, so $A$ is not in the array. Otherwise, $answer$ gives the array index where $A$ is found.]
+            \end{algorithmic}
+        \end{algorithm}
 
     \item What is the loop invariant of your second algorithm? (Proofs are not
         necessary, just stating the LI is required here.  As usual, for partial
@@ -112,12 +203,12 @@ Recall the binary search algorithm.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        The Loop Invariant of Algorithm 2 is: "\textsc{BinarySearchWhile}$(A, b):$ If $A$ is in the array $b$, then the index of $A$ is within the range $(low, high)$ inclusive."
 \end{enumerate}
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -129,7 +220,7 @@ Read Chapter $11$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        A proof is a written argument instructing the reader in how to arrive at a target conclusion. A proof provides all the definitions, background, and reasoning for any reader to independently follow the process of the writer to reach the target conclusion. Each step is documented such that it can be verified as true or false by the reader, in order for any reader to check the validity of the proof.
 
 
     \item Choose one concept that was described in both FCS and in Epp.
@@ -137,13 +228,13 @@ Read Chapter $11$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Both FCS and Epp. described Proof by Induction - and both used dominoes as a real-world example. They both credited one of the earliest mathematicians to use it (Francesco Maurolico), and walked through the first few steps to demonstrate the pattern for induction that must be proven. FCS limited the discussion to layman's terms with a focus on coloring maps, and included an additional concrete visual example for coloring a few graphs with $n$ and $n+1$ countries. Epp, on the other hand, generalized their description of induction to the logical mathematics terms used throughout the book - specifically, the form of $P(k)$ and $P(k+1)$. Epp also walked through the list of steps required to conduct any inductive proof, and included some formal proofs by induction. While they both gave a general understanding, Epp. really went into the formal detail of how to apply proof by induction to other topics and FCS seemed to focus on giving the reader an understanding just enough to follow the process of the Four-Color Theorem and the work with Minimal Criminals.
 
 \end{enumerate}
 
 % ============================================
 % ============================================
-\collab{\todo{}}
+\collab{}
 \nextprob{Thomas Bayes}
 % ============================================
 % ============================================
@@ -159,7 +250,14 @@ biography.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Thomas Bayes was a Presbyterian minister and philosopher with a few short but impactful years spent on mathematics and statistics. Born 1701 in London, he studied logic and theology at the University of Edinburgh. Afterwards he worked at a chapel in London for a few years before moving to Kent as a minister of the Mount Sion Chapel. Spending most of his time as a minister, his only publicly published paper before his death was of theological nature, in 1731. Anonymously, he published a paper in 1736 defending Isaac Newton's calculus from other philosophers. Late in his life, he began focusing on statistics, learning privately from books and began work on probability theory, which was published posthumously by his friend Richard Price - now a well-known Theorem in the world of statistics.
+
+Bayes' theological work bears little known impact on the world of Computer Science, but his statistical work is of great value. "Bayes Theorem", as it is known, provides a concise and reliable way to analyzing conditional probabilities. Given that it can be reduced to a single equation, this calculation can be quickly done by computers given the proper inputs, allowing quick analysis for any field - e.g. the effectiveness of medical treatments.
+
+My source for this question is:
+\begin{enumerate}
+    \item \url{https://en.wikipedia.org/wiki/Thomas_Bayes}
+\end{enumerate}
 
 % %% ... the bibliography
 % \newpage
